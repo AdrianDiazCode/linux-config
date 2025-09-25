@@ -10,6 +10,8 @@ source ~/linux-config/.bash-init.sh
 
 bash ~/linux-config/install-deps.sh
 
+# install the fonts inside the font folder (procedure depends on your OS)
+
 # Install docker desktop and activate the docker daemon service
 
 ## For Linux:
