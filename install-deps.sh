@@ -47,11 +47,6 @@ echo -e "${RESETCOLOR}"
 brew install zig
 echo "zig version check: $(zig version)"
 
-# if ! command -v gcc &>/dev/null; then
-#   alias gcc='gcc-15'
-#   echo "alias gcc='gcc-15'" >>./.bash-init.sh
-# fi
-
 echo -e "${GREEN}"
 echo -e "\n Installing Git..."
 echo -e "${RESETCOLOR}"
@@ -69,3 +64,22 @@ echo -e "\n Installing lazygit..."
 echo -e "${RESETCOLOR}"
 brew install lazygit
 echo "lazygit version check: $(lazygit --version)"
+
+echo -e "${GREEN}"
+echo -e "\n Installing ripgrep..."
+echo -e "${RESETCOLOR}"
+brew install ripgrep
+echo "rigpgrep version check: $(rg --version)"
+
+echo -e "${GREEN}"
+echo -e "\n Installing docker..."
+echo -e "${RESETCOLOR}"
+brew install docker
+sudo systemctl enable docker.service
+echo "docker version check: $(docker --version)"
+
+echo -e "${GREEN}"
+echo -e "\n Installing docker-compose..."
+echo -e "${RESETCOLOR}"
+brew install docker-compose
+echo "docker-compose version check: $(docker-compose --version)"
