@@ -3,7 +3,7 @@ tmux
 
 command -v bindkey &>/dev/null && bindkey -v
 
-alias bm='cd ~/Documents/buildman/buildman-k8 && source source.sh && source tmux-session.sh'
+alias bm='cd ~/Documents/buildman/buildman-k8 && source source.sh && ./tmux-session.sh'
 alias nvimconf='source  ~/.config/nvim/tmux-session.sh'
 
 export NVM_DIR="$HOME/.nvm"
