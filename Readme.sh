@@ -2,12 +2,13 @@
 
 git clone git@github.com:AdrianDiazCode/linux-config.git ~/linux-config
 
-# Source boot commands from your .bashrc or .zsh, etc
+# Add this to the .tmux.conf located in your home dir:
+source-file ~/linux-config/tmux.conf
 
+# Source boot commands from your .bashrc or .zsh, etc
 source ~/linux-config/.bash-init.sh
 
 # Install Dependencies
-
 bash ~/linux-config/install-deps.sh
 
 # install the fonts inside the font folder (procedure depends on your OS)
