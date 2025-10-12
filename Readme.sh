@@ -18,8 +18,8 @@ bash ~/linux-config/install-deps.sh
 ## For Linux:
 
 # Start and enable Docker service
-sudo systemctl start docker
-sudo systemctl enable docker
+sudo systemctl start docker  # Linux only
+sudo systemctl enable docker # Linux only
 
 ## For macOS:
 

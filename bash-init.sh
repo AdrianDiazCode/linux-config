@@ -1,4 +1,3 @@
-tmux source ~/linux-config/.tmux.conf
 tmux
 
 command -v bindkey &>/dev/null && bindkey -v
