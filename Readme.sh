@@ -6,7 +6,7 @@ git clone git@github.com:AdrianDiazCode/linux-config.git ~/linux-config
 source-file ~/linux-config/tmux.conf
 
 # Source boot commands from your .bashrc or .zsh, etc
-source ~/linux-config/.bash-init.sh
+source ~/linux-config/bash-init.sh
 
 # Install Dependencies
 bash ~/linux-config/install-deps.sh
