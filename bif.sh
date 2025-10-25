@@ -6,6 +6,10 @@ SESSION_NAME="bifrost"
 
 if [ "$1" = '--ops' ]; then
   OPSDASH=true
+  SPLIT_PERC=17
+else
+  OPSDASH=false
+  SPLIT_PERC=25
 fi
 
 echo "OPSDASH is set to: $OPSDASH"
@@ -45,13 +49,13 @@ tmux resize-pane -t $SESSION_NAME:.0 -R 25
 tmux split-window -v -t $SESSION_NAME:.0
 
 # Split the right pane horizontally (top, middle and bottom)
-tmux split-window -v -t $SESSION_NAME:.2
+tmux split-window -v -t $SESSION_NAME:.2 -p $SPLIT_PERC
 
 if [ $OPSDASH = true ]; then
-  tmux split-window -v -t $SESSION_NAME:.2
-  tmux split-window -v -t $SESSION_NAME:.2
-  tmux split-window -v -t $SESSION_NAME:.2
-  tmux split-window -v -t $SESSION_NAME:.2
+  tmux split-window -v -t $SESSION_NAME:.2 -p $SPLIT_PERC
+  tmux split-window -v -t $SESSION_NAME:.2 -p $SPLIT_PERC
+  tmux split-window -v -t $SESSION_NAME:.2 -p $SPLIT_PERC
+  tmux split-window -v -t $SESSION_NAME:.2 -p $SPLIT_PERC
 fi
 
 # Select the top-right pane and run claude
