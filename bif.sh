@@ -4,9 +4,11 @@ MY_LOCATION="$HOME/Documents/disney/bifrost/common-ux"
 OPSDASH_LOCATION="$HOME/Documents/disney/HuluOps-Dashboard"
 SESSION_NAME="bifrost"
 
-if [ $1 = '--ops']; then
+if [ "$1" = '--ops' ]; then
   OPSDASH=true
 fi
+
+echo "OPSDASH is set to: $OPSDASH"
 
 # if within a tmux session, kill it
 if [ -n "$TMUX" ]; then
