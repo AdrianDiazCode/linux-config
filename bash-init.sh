@@ -13,3 +13,4 @@ export NVM_DIR="$HOME/.nvm"
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 echo 'custom bash init sourced'
+clear
