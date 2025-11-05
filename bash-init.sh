@@ -6,7 +6,7 @@ command -v bindkey &>/dev/null && bindkey -v
 
 alias green_log='echo -e "\e[32m$1\e[0m"'
 alias red_log 'echo -e "\e[32m$1\e[0m"'
-alias bm='cd ~/Documents/buildman/buildman-k8 && source source.sh && ./tmux-session.sh'
+alias bm='cd ~/Documents/buildman/buildman-k8 && ./tmux-session.sh'
 alias nvimconf='source  ~/.config/nvim/tmux-session.sh'
 alias delete-node-modules='echo "deleting node_modules ..."  && find . -name "node_modules" -type d -prune -exec rm -rf "{}" \; && echo "done!" '
 
