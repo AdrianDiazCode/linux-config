@@ -84,8 +84,8 @@ if [ $OPSDASH = true ]; then
 
   # Select the bottom-right pane and run opsdash
   tmux select-pane -t $SESSION_NAME:.7
-  tmux send-keys -t $SESSION_NAME:.7 "yalc link @bifrost/ui" C-m
   tmux send-keys -t $SESSION_NAME:.7 "cd $OPSDASH_LOCATION" C-m
+  tmux send-keys -t $SESSION_NAME:.7 "yalc link @bifrost/ui" C-m
   tmux send-keys -t $SESSION_NAME:.7 "npm run dev" C-m
 
 fi
