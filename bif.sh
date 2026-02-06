@@ -64,29 +64,28 @@ tmux send-keys -t $SESSION_NAME:.2 "cd .. && claude" C-m
 
 # Select the middle-top-right pane and run the development server
 tmux select-pane -t $SESSION_NAME:.3
-tmux send-keys -t $SESSION_NAME:.3 "npm run dev" C-m
+if [ $OPSDASH = true ]; then
+  tmux send-keys -t $SESSION_NAME:.3 "npm run dev:yalc" C-m
+else
+  tmux send-keys -t $SESSION_NAME:.3 "npm run dev" C-m
+fi
 
 if [ $OPSDASH = true ]; then
-  # Select the middle-bottom-right pane and yalc:watch
-  tmux select-pane -t $SESSION_NAME:.4
-  tmux send-keys -t $SESSION_NAME:.4 "cd packages/ui" C-m
-  tmux send-keys -t $SESSION_NAME:.4 "npm run yalc:watch" C-m
-
   # Select the top-right pane and run the lotr server
-  tmux select-pane -t $SESSION_NAME:.5
-  tmux send-keys -t $SESSION_NAME:.5 "cd ../../esqoi-control-alb/" C-m
-  tmux send-keys -t $SESSION_NAME:.5 "docker-compose up --build" C-m
+  tmux select-pane -t $SESSION_NAME:.4
+  tmux send-keys -t $SESSION_NAME:.4 "cd ../../esqoi-control-alb/" C-m
+  tmux send-keys -t $SESSION_NAME:.4 "docker-compose up --build" C-m
 
   # Select the next-right pane and run the proxy server
-  tmux select-pane -t $SESSION_NAME: 6
-  tmux send-keys -t $SESSION_NAME:.6 "cd ../../LoTR-API/" C-m
-  tmux send-keys -t $SESSION_NAME:.6 "docker-compose up --build" C-m
+  tmux select-pane -t $SESSION_NAME: 5
+  tmux send-keys -t $SESSION_NAME:.5 "cd ../../LoTR-API/" C-m
+  tmux send-keys -t $SESSION_NAME:.5 "docker-compose up --build" C-m
 
   # Select the bottom-right pane and run opsdash
-  tmux select-pane -t $SESSION_NAME:.7
-  tmux send-keys -t $SESSION_NAME:.7 "cd $OPSDASH_LOCATION" C-m
-  tmux send-keys -t $SESSION_NAME:.7 "yalc link @bifrost/ui" C-m
-  tmux send-keys -t $SESSION_NAME:.7 "npm run dev" C-m
+  tmux select-pane -t $SESSION_NAME:.6
+  tmux send-keys -t $SESSION_NAME:.6 "cd $OPSDASH_LOCATION" C-m
+  tmux send-keys -t $SESSION_NAME:.6 "yalc link @bifrost/ui" C-m
+  tmux send-keys -t $SESSION_NAME:.6 "npm run dev" C-m
 
 fi
 
